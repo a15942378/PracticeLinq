@@ -1,0 +1,41 @@
+﻿@model Profile.Models.Data
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div>
+        <h1>確定要刪除此訊息嗎?</h1>
+        <table style="border-bottom: 1px solid black; border-top: 1px solid black;width:30%">
+            <thead style="background-color:antiquewhite">
+                <tr>
+                    <td>姓名</td>
+                    <td>標題</td>
+                    <td>內容</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @Html.HiddenFor(model => model.No)
+                    <td>@Html.DisplayFor(model => model.Name)</td>
+                    <td>@Html.DisplayFor(model => model.Title)</td>
+                    <td>@Html.DisplayFor(model => model.Contents)</td>
+                </tr>
+            </tbody>
+        </table>
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.No)
+            <input type="submit" value="刪除" />
+        }
+        @Html.ActionLink("返回", "Home")
+    </div>
+</body>
+</html>

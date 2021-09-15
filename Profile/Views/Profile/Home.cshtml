@@ -1,0 +1,46 @@
+﻿@*@model Profile.Models.Data*@
+@model IEnumerable<Profile.Models.Data>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+    <div>
+        <table style="border-bottom: 1px solid black; border-top: 1px solid black;width:30%">
+            <thead style="background-color:antiquewhite">
+                <tr>
+                    <td>姓名</td>
+                    <td>標題</td>
+                    <td>內容</td>
+                    <td colspan="2">功能</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Title</td>
+                            <td>@item.Contents</td>
+                            <td>@Html.ActionLink("修改", "Update", new { id = item.No })</td>
+                            <td>@Html.ActionLink("刪除", "Delete", new { id = item.No })</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div>
+        @Html.ActionLink("新增", "Create")
+    </div>
+</body>
+</html>

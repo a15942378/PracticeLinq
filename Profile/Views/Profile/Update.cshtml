@@ -1,0 +1,41 @@
+﻿@model Profile.Models.Data
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+</head>
+<body>
+    <div>
+        <div>
+            @using (Html.BeginForm())
+            {
+                <div>
+                    @Html.HiddenFor(model => model.No)
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.Name)
+                    @Html.EditorFor(model => model.Name, new { @Value = Model.Name })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.Title)
+                    @Html.EditorFor(model => model.Title, new { @Value = Model.Title })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.Contents)
+                    @Html.EditorFor(model => model.Contents, new { @Value = Model.Contents })
+                </div>
+                <input type="submit" value="送出" />
+            }
+        </div>
+        <div>
+            @Html.ActionLink("返回", "Home")
+        </div>
+    </div>
+</body>
+</html>

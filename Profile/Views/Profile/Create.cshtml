@@ -1,0 +1,42 @@
+﻿@model Profile.Models.Data
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div>
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <div>
+                @Html.LabelFor(model => model.Name)
+                @Html.EditorFor(model => model.Name)
+                
+            </div>
+            <div>
+                @Html.LabelFor(model => model.Title)
+                @Html.EditorFor(model => model.Title)
+                
+            </div>
+            <div>
+                @Html.LabelFor(model => model.Contents)
+                @Html.EditorFor(model => model.Contents)
+                
+            </div>
+            <input type="submit" value="送出" />
+        }
+    </div>
+    <div>
+        @Html.ActionLink("返回", "Home")
+    </div>
+</body>
+</html>
