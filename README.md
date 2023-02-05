@@ -1,3 +1,4 @@
 # PracticeLinq
-實作EF的CRUD
+
+練習EF CRUD
 
